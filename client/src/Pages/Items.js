@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useContext } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import './Items.scss';
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from 'axios'
