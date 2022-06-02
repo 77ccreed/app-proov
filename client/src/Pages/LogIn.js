@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useLocaleStorage } from "../hooks/useLocaleStorage";
 import { useNavigate } from "react-router-dom";
 import './LogIn.scss'
 
@@ -11,7 +10,6 @@ const LogIn = ({ authenticate }) => {
   });
   const [usersInDatabase, setUsersInDatabase] = useState([]);
   const navigate = useNavigate()
-  const isLoggedIn = useLocaleStorage("isLoggedIn", false);
 
 
   useEffect(() => {
@@ -44,7 +42,7 @@ const LogIn = ({ authenticate }) => {
 
 
   const onClick = () => {
-    if (user.trim().email === '' || user.trim().password === '') {
+    if (user.email === '' || user.password === '') {
       alert('Please enter your email and password.')
     }
     else {
