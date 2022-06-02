@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useContext } from 'react'
 import './Items.scss';
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from 'axios'
@@ -7,6 +7,7 @@ const Items = () => {
   const [items, setItems] = useState([]);
   const [, setLoading] = useState(true);
   const [, setError] = useState(null);
+
 
   const fetchData = useCallback(async () => {
     setLoading(true);

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Routes, Route, Outlet, NavLink, Navigate
 } from "react-router-dom";
 
-import { AuthProvider } from "./context/auth";
+import { AuthProvider, AuthContext } from "./context/auth";
 
 import LogIn from "./Pages/LogIn";
 import Items from "./Pages/Items";
@@ -17,7 +17,7 @@ function App() {
   return (
     <AuthProvider>
       <Routes>
-        {user && <Route element={<Layout />}>
+        {user && <Route element={<Layout user={user} />}>
           <Route path="items" element={<Items />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<Navigate to={user ? "/items" : "/"} />} />
@@ -36,18 +36,19 @@ function App() {
 
 function Layout() {
 
+  const { userAccount } = useContext(AuthContext);
+
   let activeStyle = {
     textDecoration: "underline",
     color: "blue",
     fontWeight: "bold"
   };
 
-
   return (
     <div>
       <header className="navbar">
         <div className="navbar__logo">
-          <h1>main@mail.ee</h1>
+          <h1>{userAccount.email}</h1>
         </div>
         <nav className="navbar__items">
           <ul>
