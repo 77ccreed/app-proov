@@ -1,0 +1,34 @@
+//LogIn
+
+.logIn__form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  height: 100%;
+  margin: 3rem;
+  padding: 3rem;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+.logIn__form__container input{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.logIn__form__container button{
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.logIn__form__container button:hover{
+  background-color: #5b639f;
+  color: white;
+  cursor: pointer;
+}
