@@ -36,3 +36,18 @@ All views should be usable in mobile devices. Layout adjustments are up to you.
 - Express
 - SQL database
 - GraphQl
+- JWT
+
+## ToDo
+
+- Implement GraphQL API
+- Implement authentication
+
+## What is done
+
+- Implement GraphQL API
+- Implement SQL database
+- Implement infinite scrolling
+- Implement contact form
+- Implement layout adjustments
+- Implement mobile support
