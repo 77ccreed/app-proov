@@ -13,6 +13,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   width: 60%;
+  margin-top: 5rem;
 }
 
 .contact-container__form input{
@@ -64,12 +65,11 @@
     max-width: 400px;
     margin-top: 2rem;
     border-radius: 25px;
-    padding: 0.5rem;
   }
   .contact-container__form{
     grid-template-columns: 1fr;
     width: 90%;
-    margin: auto;
+    margin: 2rem auto;
   }
 
 .contact-container__form input{
@@ -90,6 +90,6 @@
   .contact-container__form__button{
     grid-column: auto;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 }

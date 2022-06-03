@@ -41,7 +41,7 @@ function Layout() {
   let activeStyle = {
     textDecoration: "underline",
     color: "blue",
-    fontWeight: "bold"
+    fontWeight: "bold",
   };
 
   return (
