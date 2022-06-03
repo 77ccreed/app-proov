@@ -58,6 +58,12 @@
   cursor: pointer;
 }
 
+.contact-container__form__button:hover{
+  //animation
+  background-color: rgb(6, 119, 44);
+  color: rgb(207, 218, 160);  
+}
+
 @media screen and (max-width: 800px){
   .contact-container{
     width: 70%;
