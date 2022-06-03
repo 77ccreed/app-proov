@@ -2,9 +2,14 @@ const express = require('express');
 const mySql = require('mysql');
 const bodyParser = require('body-parser');
 const { graphqlHTTP } = require('express-graphql');
-const { buildSchema } = require('graphql');
+//const { buildSchema } = require('graphql');
 const app = express();
 const cors = require('cors');
+
+
+const graphQlSchema = require('./graphql/schema/index');
+//const graphQlResolvers = require('./graphql/resolvers/index');
+
 
 app.use(cors());
 
@@ -29,24 +34,7 @@ app.use(bodyParser.json());
 app.use(
   '/graphql',
   graphqlHTTP({
-    schema: buildSchema(`
-        type RootQuery {
-            users: [User]
-        }
-        type User {
-            id: ID!
-            name: String!
-            email: String!
-            password: String!
-        }
-        type RootMutation {
-            createUser(name: String!, email: String!, password: String!): User
-        }
-        schema {
-            query: RootQuery
-            mutation: RootMutation
-        }
-    `),
+    schema: graphQlSchema,
     rootValue: {
       users: () => {
         return dbUsers;
