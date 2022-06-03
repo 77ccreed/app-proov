@@ -42,6 +42,7 @@ All views should be usable in mobile devices. Layout adjustments are up to you.
 
 - Implement GraphQL API
 - Implement authentication
+- Implement authorize
 
 ## What is done
 
