@@ -40,7 +40,7 @@ const Items = () => {
         dataLength={items.length}
         next={fetchData}
         hasMore={true}
-        loader={<h4>Loading...</h4>}
+        loader={<h4 className='loading lds-ellipsis'>Loading...</h4>}
         endMessage={
           <p style={{ textAlign: "center" }}>
             <b>Yay! You have seen it all</b>
