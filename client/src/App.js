@@ -20,6 +20,7 @@ function App() {
         {user && <Route element={<Layout user={user} />}>
           <Route path="items" element={<Items />} />
           <Route path="contact" element={<Contact />} />
+
           <Route path="*" element={<Navigate to={user ? "/items" : "/"} />} />
         </Route>}
 
