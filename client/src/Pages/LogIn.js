@@ -46,24 +46,31 @@ const LogIn = ({ authenticate }) => {
   }, [])
 
   const onClick = () => {
-    if (user.email === '' || user.password === '') {
-      alert('Please enter your email and password.')
-    }
-    else {
-      if (usersInDatabase.find(userInDb => userInDb.email === user.email && userInDb.password === user.password)) {
-        setUser(true)
-        setUserAccount({
-          email: user.email,
-          password: user.password
-        })
-        authenticate()
-        navigate('/items')
-
-      }
-      else {
-        alert('Email or password is incorrect.')
-      }
-    }
+    setUser(true)
+    setUserAccount({
+      email: user.email,
+      password: user.password
+    })
+    authenticate()
+    navigate('/items')
+    /* if (user.email === '' || user.password === '') {
+       alert('Please enter your email and password.')
+     }
+     else {
+       if (usersInDatabase.find(userInDb => userInDb.email === user.email && userInDb.password === user.password)) {
+         setUser(true)
+         setUserAccount({
+           email: user.email,
+           password: user.password
+         })
+         authenticate()
+         navigate('/items')
+ 
+       }
+       else {
+         alert('Email or password is incorrect.')
+       }
+     }*/
   }
 
   const handleChangeEmail = (e) => {
