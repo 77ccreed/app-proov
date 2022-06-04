@@ -1,45 +1,25 @@
 const express = require('express');
+const { graphqlHTTP } = require('express-graphql');
 const mySql = require('mysql');
 const bodyParser = require('body-parser');
-const { graphqlHTTP } = require('express-graphql');
-//const { buildSchema } = require('graphql');
-const app = express();
-const cors = require('cors');
 
 
+const User = require('./model/user');
 const graphQlSchema = require('./graphql/schema/index');
 //const graphQlResolvers = require('./graphql/resolvers/index');
+const cors = require('cors');
 
+const app = express();
 
 app.use(cors());
-
-const db = mySql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'usersdata'
-});
-
-let dbUsers = null;
-
-db.query('SELECT * FROM users', (err, users) => {
-  if (err) throw err;
-  dbUsers = users;
-  console.log(users);
-});
-
-
 app.use(bodyParser.json());
+
 
 app.use(
   '/graphql',
   graphqlHTTP({
     schema: graphQlSchema,
-    rootValue: {
-      users: () => {
-        return dbUsers;
-      },
-    },
+    rootValue: User,
     graphiql: true
   })
 );
