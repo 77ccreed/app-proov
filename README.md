@@ -38,7 +38,7 @@ All views should be usable in mobile devices. Layout adjustments are up to you.
 - GraphQl
 - JWT
 
-## ToDo
+## ToDo list
 
 - Implement GraphQL API
 - Implement authentication
