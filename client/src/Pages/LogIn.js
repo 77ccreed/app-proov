@@ -13,7 +13,7 @@ const LogIn = ({ authenticate }) => {
     email: '',
     password: ''
   });
-  const [usersInDatabase, setUsersInDatabase] = useState([]);
+  const [, setUsersInDatabase] = useState([]);
   const navigate = useNavigate()
 
 
@@ -28,8 +28,10 @@ const LogIn = ({ authenticate }) => {
         query: `
           query {
             users {
+              id
               email
               password
+
             }
           }
         `
@@ -45,7 +47,8 @@ const LogIn = ({ authenticate }) => {
       })
   }, [])
 
-  const onClick = () => {
+  const onClick = (e) => {
+    e.preventDefault();
     setUser(true)
     setUserAccount({
       email: user.email,
