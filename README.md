@@ -41,6 +41,7 @@ All views should be usable in mobile devices. Layout adjustments are up to you.
 ## ToDo list
 
 - Implement GraphQL API
+- Get data from SQL database and display it in infinite scrolling view
 - Implement authentication
 - Implement authorization
 
