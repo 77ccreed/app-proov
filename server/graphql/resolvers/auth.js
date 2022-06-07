@@ -1,10 +1,9 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const User = require('../../model/user');
 
-const User = require('../model/user');
-
-module.exports = {//resolver use jwt and bcrypt to authenticate user and create token for user to use in graphql
+module.exports = {
   login: async ({ email, password }) => {
     const user = await User.findOne({ email: email });
     if (!user) {
@@ -17,7 +16,9 @@ module.exports = {//resolver use jwt and bcrypt to authenticate user and create 
     const token = jwt.sign(
       { userId: user.id, email: user.email },
       'somesupersecretkey',
-      { expiresIn: '1h' }
+      {
+        expiresIn: '1h'
+      }
     );
     return { userId: user.id, token: token, tokenExpiration: 1 };
   }
