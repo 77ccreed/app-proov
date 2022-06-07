@@ -8,6 +8,7 @@ const db = mySql.createConnection({
   database: 'usersdata'
 });
 
+
 let dbUsers = null;
 
 db.query('SELECT * FROM users', (err, users) => {
@@ -22,10 +23,3 @@ module.exports = {
     return dbUsers;
   },
 };
-
-
-
-
-
-
-
